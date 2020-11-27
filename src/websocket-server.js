@@ -17,7 +17,7 @@ socket.on('connect', conn => {
   console.log('接受到一次通讯：' + conn.id);
   conn.on('LoginCheckForWebSocket', loginUser => {
     console.log('LoginCheckForWebSocket：' + JSON.stringify(loginUser));
-    let userId = _.get(loginUser, 'id', '');
+    let userId = _.get(loginUser, 'userId', '');
     let token = _.get(loginUser, 'token', '');
     let res;
     if (_.isEmpty(userId)) {
